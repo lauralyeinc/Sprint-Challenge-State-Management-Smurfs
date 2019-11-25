@@ -23,11 +23,21 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
 
+  Context API provides a way to share values between components without having to prop drill through every level of the three. 
+
+- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions changes the state and are what users do to make the state change.  the store holds reducers and state, it stores values to be changed and will only hold what is changed based on the UI and the actions that the UI goes thru.  Reducers process actions by accepting previous state and making it into new state. 
+
+- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+Application state is the state the whole application uses/changes.  Component state is local level state that component only needs to be able to use/change.  In SmurfForm.js The form only, needs to know where a potiental newSmurf will be placed and what it's value is. The WHOLE app doesn't need to know about a holder state within the SmurfForm.js because it's in control of the true state that will go into the local/component placeholder state once a user adds a newSmurf. 
+
+- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+Redux-Think allows us to make asynchoronous operations in redux.  Thunk is a term for a function that returns another function, that returns a async operation. 
+
+- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+I like redux, but it takes a lot of planning. To much planning for me in this three hour slot.  It is more organized and super clean code IF you understand redux and all it's parts.  I do alos like ContextAPI. I learned it first and it stuck in my brain more and learned it better than redux.  It's better used for small projects and can be added when needed, compared to building with redux in mind. 
 ## Project Set Up
 
 Follow these steps to set up your project:
