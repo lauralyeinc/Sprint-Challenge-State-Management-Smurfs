@@ -3,13 +3,13 @@ import { SmurfContext } from "../contexts/SmurfContext";
 
 import Smurfs from "./Smurfs";
 
-const SmurfList = props => {
-    const { smurfs } = useContext(SmurfContext);
+const SmurfList = () => {
+    const { smurfs, deleteSmurf } = useContext(SmurfContext);
 
     return (
         <div className="SmurfList">
             {smurfs && smurfs.map(smurf => 
-                <Smurfs key={smurf.id} smurf={smurf} /> )}
+                <Smurfs key={smurf.id} smurf={smurf} deleteSmurf={deleteSmurf} /> )}
         </div>
     );
 };

@@ -27,9 +27,19 @@ const App = () => {
       .catch(err => console.log(err));
   }; 
 
+  const deleteSmurf = smurfID => {
+    axios
+    .delete('http://localhost:3333/smurfs/{smurfID}')
+    .then(res => {
+      console.log( 'deleted a Smurf');
+      setSmurfs(res.data);
+    })
+    .catch(err => console.log(err));
+  };
+
 
   return (
-    <SmurfContext.Provider value={{ smurfs, setSmurfs, addSmurfs }}>
+    <SmurfContext.Provider value={{ smurfs, setSmurfs, addSmurfs, deleteSmurf }}>
       <div className="App">
         <h1> SMURFS! 2.0 W/ Redux</h1>
           <SmurfForm /> 
