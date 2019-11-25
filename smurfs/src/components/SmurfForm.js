@@ -33,7 +33,7 @@ const SmurfsForm = () => {
                 type="number"
                 name="age"
                 placeholder="age"
-                value="{newSmurf.age}"
+                value={newSmurf.age}
                 onChange={event => handleChange(event)} />
 
                 <input
